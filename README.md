@@ -4,7 +4,7 @@ Este projeto para gerenciar transações financeiras, incluindo as funcionalidad
 
 ## Tecnologias Utilizadas
 
- - **Frontend**: Angular e CSS para estilização.p
+ - **Frontend**: Angular e CSS para estilização
  - **Backend**: Laravel 11 com PHP 8.3.13
  - **Banco de Dados**: MySql.
 
