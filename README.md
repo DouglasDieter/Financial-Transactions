@@ -17,7 +17,7 @@ O backend foi desenvolvido com Laravel 11, utilizando PHP 8.3.13
 ### Componentes
 
 Formulário para adicionar ou editar transações.
-Lista com todas as transações e opções para editar e deletar.
+Lista com todas as transações com opções para filtar, adicionar, editar e apagar.
 
 ### Frontend
 
