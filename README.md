@@ -51,6 +51,7 @@ O banco de dados MySql é utilizado para armazenar as todas as informações das
    - Inicie o servidor do Angular: `ng serve`
 
 2. **Backend:**
+   - Instale as dependências: `composer install`
    - Configure o ambiente: `.env`
    - Crie a tabela do banco de dados pelo php: `php artisan make:model Transaction -m`
    - Execute as migrações: `php artisan migrate`
@@ -66,5 +67,5 @@ O banco de dados MySql é utilizado para armazenar as todas as informações das
  - Iniciar o servidor do Laravel `php artisan serve`
  - Inicie o servidor do Angular: `ng serve` 
  - No navegador de sua preferência acesse `http://localhost:4200/`.
- - Na página de lista você poderá usar as ações de criar, editar ou deletar transações.
+ - Na página de lista você poderá usar as ações de criar, editar ou apagar transações, além de filtrá-las.
  - No formulário de cadastro e edição das transações, preencha os campos necessários.
