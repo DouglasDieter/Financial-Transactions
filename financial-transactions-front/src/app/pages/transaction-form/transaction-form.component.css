@@ -1,0 +1,82 @@
+/* Tema escuro para o formulário com cores alinhadas à lista de transações */
+.transaction-form-container {
+  max-width: 80%;
+  margin: 2rem auto;
+  padding: 1.5rem;
+  background-color: #1e1e1e;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+h1 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #f5f5f5;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  margin-bottom: 0.5rem;
+  color: #bbbbdd;
+}
+
+input, select {
+  padding: 0.8rem;
+  border: 1px solid #444;
+  border-radius: 5px;
+  background-color: #292929;
+  color: #ffffff;
+}
+
+input:focus, 
+select:focus {
+  outline: none;
+  border-color: #5e5edb; /* Azul escuro, consistente com o botão "Editar" */
+}
+
+.warning-message {
+  font-size: 0.85rem;
+  color: #ff6f6f; /* Vermelho usado na lista de transações */
+  text-align: center;
+}
+
+.form-actions {
+  display: flex;
+  justify-content: space-between;
+}
+
+/* Botões */
+button {
+  padding: 0.6rem 1.2rem;
+  font-size: 1rem;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.2s, opacity 0.3s;
+}
+
+button.save-btn {
+  background-color: #4caf50; /* Verde do botão "Cadastrar Transação" */
+  color: white;
+}
+
+button.cancel-btn {
+  background-color: #607d8b; /* Azul acinzentado consistente */
+  color: white;
+}
+
+button:hover {
+  transform: scale(1.05);
+  opacity: 0.9;
+}

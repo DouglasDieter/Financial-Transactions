@@ -1,0 +1,42 @@
+<div class="transaction-list-container">
+  <h1>Transações Financeiras</h1>
+
+  <table class="transaction-table">
+    <thead>
+      <tr>
+        <th>Descrição</th>
+        <th>Valor</th>
+        <th>Tipo</th>
+        <th>Categoria</th>
+        <th>Data</th>
+        <th>Ações</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let transaction of transactions">
+        <td>{{ transaction.descricao }}</td>
+        <td [class.negative]="transaction.tipo === 'despesa'">
+          {{ transaction.valor | currency }}
+        </td>
+        <td>{{ transaction.tipo === 'receita' ? 'Receita' : 'Despesa' }}</td>
+        <td>{{ transaction.categoria }}</td>
+        <td>{{ transaction.data | date }}</td>
+        <td class="actions">
+          <button (click)="editTransaction(transaction.id!)" class="edit-btn">Editar</button>
+<button (click)="confirmDelete(transaction.id!)" class="delete-btn">Apagar</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <button (click)="createTransaction()" class="add-btn">Cadastrar Transação</button>
+
+  <!-- Modal para confirmação de exclusão -->
+  <div *ngIf="showDeleteModal" class="modal">
+    <div class="modal-content">
+      <p>Tem certeza de que deseja excluir esta transação?</p>
+      <button (click)="deleteTransaction()" class="confirm-btn">Confirmar</button>
+      <button (click)="cancelDelete()" class="cancel-btn">Cancelar</button>
+    </div>
+  </div>
+</div>
