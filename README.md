@@ -59,7 +59,7 @@ O banco de dados MySql é utilizado para armazenar as todas as informações das
 
 3. **Banco de Dados:**
    - Certifique-se de que o MySql está em execução.
-   - O Banco de Dados será criado com a execução do comando `php artisan migrate` utilizado anteriormente, mas caso não tenha, crie-o manualmente: `create database if not exists financial_transactions`.
+   - A tabela será criada com a execução do comando `php artisan migrate` utilizado anteriormente, mas caso não tenha, crie-o manualmente: `create database if not exists financial_transactions`.
    - Configure o acesso ao banco de dados no arquivo `.env` do Laravel.
 
 ## Instruções de Uso
