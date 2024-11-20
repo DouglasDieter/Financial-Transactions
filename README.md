@@ -26,7 +26,7 @@ A parte da estilização foi feita usando Angular 18.2.12 e CSS.
 ### Componentes
 
  - **transaction-form**: Formulário para adicionar e editar transações.
- - **transaction-list**: Lista todas as transações com opções para editar e excluir.
+ - **transaction-list**: Lista todas as transações com opções para filtrar, criar, editar e excluir.
 
 ### Serviços
 
