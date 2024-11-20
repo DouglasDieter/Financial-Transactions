@@ -24,12 +24,14 @@ class Transaction extends Model
     // Desabilitar os campos timestamps
     public $timestamps = false;  // Porque vamos usar apenas o campo 'data' e não os campos padrão created_at/updated_at
 
-    public function setValorAttribute($value){
-        if ($this->attributes['tipo'] === 'despesa') {
-            $this->attributes['valor'] = $value-$value-$value;
-        } else {
-            $this->attributes['valor'] = $value;
-        }
+    public function setValorAttribute($value)
+{
+    if ($this->attributes['tipo'] === 'despesa' && $value > 0) {
+        // Transforma o valor em negativo apenas se for uma despesa
+        $this->attributes['valor'] = -abs($value);
+    } else {
+        $this->attributes['valor'] = abs($value); // Garante que receitas sejam sempre positivas
     }
+}
 
 }

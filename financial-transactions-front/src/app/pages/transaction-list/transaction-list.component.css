@@ -196,3 +196,32 @@ button:hover {
   transform: scale(1.05);
   opacity: 0.9;
 }
+
+td.actions {
+  display: flex; /* Define o layout flexível para a célula */
+  justify-content: center; /* Centraliza horizontalmente os botões */
+  align-items: center; /* Centraliza verticalmente os botões */
+  gap: 0.5rem; /* Adiciona espaçamento uniforme entre os botões */
+  padding: 0.5rem; /* Espaçamento interno para evitar que os botões fiquem colados nas bordas */
+}
+
+/* Garantindo que os botões tenham um tamanho consistente */
+.actions button {
+  padding: 0.5rem 1rem; /* Define um tamanho consistente para os botões */
+  min-width: 80px; /* Largura mínima para manter os botões proporcionais */
+  text-align: center; /* Centraliza o texto nos botões */
+  border-radius: 5px; /* Deixa os botões arredondados */
+}
+
+/* Ajusta a tabela para evitar colunas muito pequenas */
+.transaction-table th, 
+.transaction-table td {
+  padding: 0.8rem; /* Espaçamento interno mais confortável */
+  text-align: left; /* Texto alinhado à esquerda */
+}
+
+.transaction-table th:last-child,
+.transaction-table td:last-child {
+  text-align: center; /* Alinha o cabeçalho e célula da coluna "Ações" */
+  width: 180px; /* Define uma largura fixa para a coluna de ações */
+}

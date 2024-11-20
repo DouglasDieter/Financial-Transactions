@@ -50,7 +50,7 @@ export class TransactionFormComponent {
   validateTransaction(): void {
     const valor = this.transacaoForm.get('valor')?.value;
     const tipo = this.transacaoForm.get('tipo')?.value;
-
+  
     if (tipo === 'receita' && valor < 0) {
       this.warningMessage =
         'Para mudar de despesa para receita, altere o valor para um número positivo.';
@@ -64,22 +64,33 @@ export class TransactionFormComponent {
   loadTransaction(id: number): void {
     this.transactionService.getTransactionById(id).subscribe(
       (transaction: Transaction) => {
-        this.transacaoForm.patchValue(transaction); // Preenche o formulário com os dados da transação
+        // Ajusta o valor para ser positivo ao carregar no formulário
+        transaction.valor = Math.abs(transaction.valor);
+  
+        // Preenche o formulário com os dados da transação
+        this.transacaoForm.patchValue(transaction);
       },
       (error) => {
         console.error('Erro ao carregar a transação', error);
       }
     );
   }
+  
 
   saveTransaction(): void {
-
     if (this.warningMessage) {
       return; // Impede o envio se houver um aviso ativo
     }
-
+  
     if (this.transacaoForm.valid) {
       const transactionData = this.transacaoForm.value;
+  
+      // Ajusta o valor baseado no tipo
+      if (transactionData.tipo === 'despesa') {
+        transactionData.valor = transactionData.valor; // Sempre negativo para despesas
+      } else {
+        transactionData.valor = Math.abs(transactionData.valor); // Sempre positivo para receitas
+      }
   
       if (this.transactionId) {
         // Atualiza a transação existente
