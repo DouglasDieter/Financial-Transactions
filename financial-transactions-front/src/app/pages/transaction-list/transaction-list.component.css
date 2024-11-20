@@ -225,3 +225,37 @@ td.actions {
   text-align: center; /* Alinha o cabeçalho e célula da coluna "Ações" */
   width: 180px; /* Define uma largura fixa para a coluna de ações */
 }
+
+.filter-buttons {
+  display: flex;
+  justify-content: space-evenly; /* Distribui os botões uniformemente */
+  align-items: center; /* Centraliza os botões verticalmente */
+  margin: 20px auto; /* Espaçamento acima e abaixo dos botões */
+  padding: 10px;
+}
+
+.filter-buttons button {
+  padding: 10px 20px; /* Aumenta o tamanho dos botões */
+  font-size: 1rem; /* Texto mais legível */
+  border: 1px solid #444; /* Bordas escuras */
+  border-radius: 5px;
+  background-color: #3a3a4f; /* Cor base dos botões */
+  color: #f5f5f5; /* Texto claro */
+  cursor: pointer;
+  transition: all 0.3s;
+  background-color: #6c757d; /* Cor cinza escuro como o botão "Editar" */
+  color: #f8f9fa;
+}
+
+.filter-buttons button:hover {
+  background-color: #3c3f42; /* Cor de destaque no hover */
+}
+
+.filter-buttons button.active {
+  background-color: #3c3f42;
+  color: #fff; /* Contraste com o texto */
+}
+
+.filter-buttons button:active {
+  transform: scale(0.95); /* Animação de clique */
+}

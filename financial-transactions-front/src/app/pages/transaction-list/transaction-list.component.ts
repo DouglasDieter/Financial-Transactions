@@ -14,6 +14,8 @@ export class TransactionListComponent implements OnInit {
   transactions: Transaction[] = [];
   showDeleteModal = false;
   transactionToDeleteId: number | null = null;
+  filteredTransactions: Transaction[] = []; // Lista filtrada
+  selectedFilter: string = 'all'; // Valor padrão para exibir todas as transações
 
   constructor(private router: Router, private transactionService: TransactionService) {}
 
@@ -26,11 +28,27 @@ export class TransactionListComponent implements OnInit {
       (data: Transaction[]) => {
         console.log('Transações carregadas:', data);
         this.transactions = data;
+        this.applyFilter(); // Aplica o filtro ao carregar
       },
       (error) => {
         console.error('Erro ao carregar as transações:', error);
       }
     );
+  }
+
+  applyFilter(): void {
+    if (this.selectedFilter === 'all') {
+      this.filteredTransactions = this.transactions; // Exibe todas
+    } else {
+      this.filteredTransactions = this.transactions.filter(
+        (transaction) => transaction.tipo === this.selectedFilter
+      );
+    }
+  }
+  
+  setFilter(filter: string): void {
+    this.selectedFilter = filter;
+    this.applyFilter();
   }
 
   editTransaction(id: number) {
@@ -64,4 +82,6 @@ export class TransactionListComponent implements OnInit {
   createTransaction() {
     this.router.navigate(['/transactions/new']);  // Navega para a tela de cadastro de nova transação
   }
+
+  
 }

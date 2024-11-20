@@ -1,6 +1,18 @@
 <div class="transaction-list-container">
   <h1>Transações Financeiras</h1>
 
+  <div class="filter-buttons">
+    <button (click)="setFilter('all')" [class.active]="selectedFilter === 'all'">
+      Todas
+    </button>
+    <button (click)="setFilter('receita')" [class.active]="selectedFilter === 'receita'">
+      Receitas
+    </button>
+    <button (click)="setFilter('despesa')" [class.active]="selectedFilter === 'despesa'">
+      Despesas
+    </button>
+  </div>
+
   <table class="transaction-table">
     <thead>
       <tr>
@@ -13,10 +25,10 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let transaction of transactions">
+      <tr *ngFor="let transaction of filteredTransactions">
         <td>{{ transaction.descricao }}</td>
         <td [class.negative]="transaction.tipo === 'despesa'">
-          {{ transaction.valor | currency }}
+          {{ transaction.valor | currency: 'BRL' }}
         </td>
         <td>{{ transaction.tipo === 'receita' ? 'Receita' : 'Despesa' }}</td>
         <td>{{ transaction.categoria }}</td>

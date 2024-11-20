@@ -51,9 +51,9 @@ export class TransactionFormComponent {
     const valor = this.transacaoForm.get('valor')?.value;
     const tipo = this.transacaoForm.get('tipo')?.value;
   
-    if (tipo === 'receita' && valor < 0) {
+    if (valor < 0) {
       this.warningMessage =
-        'Para mudar de despesa para receita, altere o valor para um número positivo.';
+        'Use apenas números positivos.';
     } else {
       this.warningMessage = '';
     }
