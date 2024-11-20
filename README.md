@@ -1,6 +1,6 @@
 # Visão Geral
 
-Este projeto para gerenciar transações financeiras, incluindo as funcionalidades de listar, adicionar, editar e deletar transações.
+Este projeto visa gerenciar transações financeiras, incluindo as funcionalidades de listar, filtrar, adicionar, editar e apagar transações.
 
 ## Tecnologias Utilizadas
 
